@@ -14,12 +14,28 @@
       <!-- El marcador para AR.js (usamos el marcador "hiro" por ahora) -->
       <a-marker preset="hiro">
         <a-entity 
-          gltf-model="https://leginer.github.io/tarjeta-ar/menina.glb"
-          scale="0.5 0.5 0.5"
-          position="0 0 0"
-          rotation="0 45 0"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-        </a-entity>
+        gltf-model="https://leginer.github.io/tarjeta-ar/menina.glb"
+        scale="0.5 0.5 0.5" 
+        position="0 0 0" 
+        rotation="0 45 0" 
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+      </a-entity>
+    
+      <!-- Texto para la dirección web -->
+      <a-text 
+        value="Visita: www.ejemplo.com"
+        color="#FFFFFF" 
+        position="0 0.5 0" 
+        scale="2 2 2">
+      </a-text>
+    
+      <!-- Texto para el teléfono -->
+      <a-text 
+        value="Tel: +123456789" 
+        color="#FFFFFF" 
+        position="0 -0.5 0" 
+        scale="2 2 2">
+      </a-text>
       </a-marker>
 
       <!-- La cámara que se usará para la AR -->
