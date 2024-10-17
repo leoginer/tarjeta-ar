@@ -6,41 +6,48 @@
     <title>Tarjeta de Presentación AR</title>
     <!-- Cargar A-Frame y AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
     <!-- Definir la escena AR -->
     <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
-      <!-- El marcador para AR.js (usamos el marcador "hiro" por ahora) -->
-      <a-marker preset="hiro">
+      <!-- Marcador NFT personalizado -->
+      <a-nft
+        type="nft"
+        url="https://leoginer.github.io/tarjeta-ar/menina2"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
+      >
+        <!-- Modelo 3D -->
         <a-entity 
-        gltf-model="https://leginer.github.io/tarjeta-ar/menina.glb"
-        scale="0.5 0.5 0.5" 
-        position="0 0 0" 
-        rotation="0 45 0" 
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-      </a-entity>
-    
-      <!-- Texto para la dirección web -->
-      <a-text 
-        value="Visita: www.ejemplo.com"
-        color="#FFFFFF" 
-        position="0 0.5 0" 
-        scale="2 2 2">
-      </a-text>
-    
-      <!-- Texto para el teléfono -->
-      <a-text 
-        value="Tel: +123456789" 
-        color="#FFFFFF" 
-        position="0 -0.5 0" 
-        scale="2 2 2">
-      </a-text>
-      </a-marker>
+          gltf-model="https://leoginer.github.io/tarjeta-ar/menina.glb"
+          scale="0.5 0.5 0.5" 
+          position="0 0 0" 
+          rotation="0 45 0" 
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+        </a-entity>
+
+        <!-- Texto para la dirección web -->
+        <a-text 
+          value="Visita: www.eddimia.com"
+          color="#FFFFFF" 
+          position="0 0.5 0" 
+          scale="2 2 2">
+        </a-text>
+
+        <!-- Texto para el teléfono -->
+        <a-text 
+          value="Tel: +123456789" 
+          color="#FFFFFF" 
+          position="0 -0.5 0" 
+          scale="2 2 2">
+        </a-text>
+      </a-nft>
 
       <!-- La cámara que se usará para la AR -->
       <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
-
