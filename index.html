@@ -20,18 +20,20 @@
 
 <!-- Enlace para la dirección web -->
 <a-entity position="0 4 0"> <!-- Ajusta la altura del contenedor para subir el texto -->
+  <!-- Texto para la dirección web -->
   <a-text 
-      value="Eddimia"
+      value="Eddimia.com"
       color="#000000" 
-      scale="5 5 5" <!-- Reducir el tamaño del texto -->
-      align="center">
+      scale="3 3 3" <!-- Reducir el tamaño del texto -->
+      align="center"
+      position="0 2 0"> <!-- Posiciona el texto ligeramente por encima del plano -->
   </a-text>
+  <!-- Plano clicable para el enlace -->
   <a-plane
       width="2.5"
       height="0.5"
       color="#ffffff"
       opacity="0.5"
-      position="0 -0.3 0" <!-- Ajustar para centrar el plano con el texto -->
       href="https://www.eddimia.com"
       class="clickable">
   </a-plane>
