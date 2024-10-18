@@ -19,10 +19,10 @@
       </a-entity>
 
 <!-- Enlace para la dirección web -->
-<a-entity position="0 -0.75 0">
+<a-entity position="0 1.5 0"> <!-- Ajustar para colocarlo arriba del modelo -->
   <a-text 
       value="Visita: www.eddimia.com"
-      color="#ffffff" 
+      color="#000000" 
       scale="3 3 3"
       align="center">
   </a-text>
@@ -31,7 +31,7 @@
       height="0.5"
       color="#ffffff"
       opacity="0.5"
-      event-set__click="material.color: #ff0000"
+      position="0 -0.3 0" <!-- Ajusta para centrar el plano con el texto -->
       href="https://www.eddimia.com"
       class="clickable">
   </a-plane>
