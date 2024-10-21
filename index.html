@@ -14,28 +14,26 @@
         gltf-model="https://leoginer.github.io/tarjeta-ar/menina.glb"
         scale="0.5 0.5 0.5" 
         position="0 0 0" 
-        rotation="0 180 -90"
+        rotation="0 180 0"
         sound="src: url(https://leoginer.github.io/tarjeta-ar/music.mp3); autoplay: true; loop: true; volume: 1"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
       </a-entity>
 
-      <a-entity position="0 2 0"> <!-- Contenedor que coloca el texto por encima del modelo -->
-        <!-- Texto para la dirección web -->
+      <a-entity position="0 2 0">
         <a-text 
             value="Eddimia.com"
-            color="#000000"
+            color="#000000" 
             scale="0.5 0.5 0.5"
-            position="0 0.2 0"> <!-- Ajustar la altura para estar por encima del modelo -->
+            anchor="center"
+            position="0 0.2 0">
         </a-text>
       
-        <!-- Plano clicable para el enlace -->
         <a-plane
             width="2"
             height="0.5"
             color="#ffffff"
             opacity="0"
             position="0 0 0"
-            event-set__click="material.color: #ff0000"
             href="https://www.eddimia.com"
             class="clickable">
         </a-plane>
