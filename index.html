@@ -14,7 +14,7 @@
         gltf-model="https://leoginer.github.io/tarjeta-ar/menina.glb"
         scale="0.5 0.5 0.5" 
         position="0 0 0" 
-        rotation="90 180 0"
+        rotation="0 180 -90"
         sound="src: url(https://leoginer.github.io/tarjeta-ar/music.mp3); autoplay: true; loop: true; volume: 1"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
       </a-entity>
@@ -24,7 +24,7 @@
         <a-text 
             value="Eddimia.com"
             color="#000000" 
-            scale="0.5 0.5 0.5" <!-- Tamaño pequeño del texto -->
+            scale="0.5 0.5 0.5"
             align="center"
             position="0 0.2 0"> <!-- Ajustar la altura para estar por encima del modelo -->
         </a-text>
@@ -34,7 +34,7 @@
             width="2"
             height="0.5"
             color="#ffffff"
-            opacity="0" <!-- Opacidad a 0 para que sea invisible pero clicable -->
+            opacity="0"
             position="0 0 0"
             event-set__click="material.color: #ff0000"
             href="https://www.eddimia.com"
