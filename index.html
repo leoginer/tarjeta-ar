@@ -20,11 +20,11 @@
                 </a-entity>
             
                 <!-- Letrero con texto interactivo -->
-                <a-entity id="link-text" position="0 1 0">
+                <a-entity id="link-text" position="0 1.5 0">
                     <!-- Fondo del letrero -->
-                    <a-plane width="1" height="1.5" color="#0000FF" opacity="0.7"></a-plane>
+                    <a-plane width="1.5" height="0.5" color="#0000FF" opacity="0.7"></a-plane>
                     <!-- Texto -->
-                    <a-text value="visita eddim.com" anchor="center" color="#FFFFFF" position="0 1 0"></a-text>
+                    <a-text value="visita eddimia.com" anchor="center" color="#FFFFFF" position="0 0 0.01" width="1.4"></a-text>
                 </a-entity>
            
 
@@ -33,7 +33,8 @@
 
 			</a-marker>
 
-            <a-entity camera raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse"></a-entity>
+            <!-- Cámara con raycaster y cursor para interactividad -->
+            <a-entity camera cursor="fuse: false" raycaster="objects: .clickable"></a-entity>
 
         </a-scene>
 
@@ -43,11 +44,11 @@
               // Añadimos la clase 'clickable' al elemento
               textEntity.classList.add('clickable');
               textEntity.addEventListener('click', function (evt) {
-                window.open('https://eddim.com', '_blank');
+                window.open('https://eddimia.com', '_blank');
               });
               // Soporte para eventos táctiles
               textEntity.addEventListener('touchstart', function (evt) {
-                window.open('https://eddim.com', '_blank');
+                window.open('https://eddimia.com', '_blank');
               });
             });
           </script>
