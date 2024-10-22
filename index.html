@@ -19,16 +19,12 @@
                     sound="src: url(https://leoginer.github.io/tarjeta-ar/music.mp3); autoplay: true; loop: true; volume: 1">
                 </a-entity>
             
-                <!-- Contenedor para el texto y el enlace sin usar a-link -->
-                <a-entity id="link-text" position="0 2 0">
+                <!-- Letrero con texto interactivo -->
+                <a-entity id="link-text" position="0 1 0">
                     <!-- Fondo del letrero -->
-                    <a-plane width="2" height="0.5" color="#007BFF" opacity="0.8"></a-plane>
-                    <!-- Texto del letrero -->
-                    <a-text value="visita eddim.com"
-                            anchor="center"
-                            color="#FFFFFF"
-                            position="0 0 0.01">
-                    </a-text>
+                    <a-plane width="2" height="0.5" color="#0000FF" opacity="0.7"></a-plane>
+                    <!-- Texto -->
+                    <a-text value="visita eddim.com" color="#FFFFFF" position="0 0 0.01"></a-text>
                 </a-entity>
            
 
@@ -37,14 +33,15 @@
 
 			</a-marker>
 
-        <a-entity camera>
-            <a-cursor id="cursor" rayOrigin="mouse"></a-cursor>
-        </a-entity>
+            <a-entity camera raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse"></a-entity>
+
         </a-scene>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
               var textEntity = document.querySelector('#link-text');
+              // Añadimos la clase 'clickable' al elemento
+              textEntity.classList.add('clickable');
               textEntity.addEventListener('click', function (evt) {
                 window.open('https://eddim.com', '_blank');
               });
@@ -54,6 +51,6 @@
               });
             });
           </script>
-          
+
     </body>
 </html>
