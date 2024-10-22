@@ -25,9 +25,9 @@
                 <!-- Letrero con texto interactivo -->
                 <a-entity id="link-text" position="0 2.5 0">
                     <!-- Fondo del letrero -->
-                    <a-plane width="1.5" height="0.5" color="#0000FF" opacity="0.7"></a-plane>
+                    <a-plane width="1.7" height="0.5" color="#0000FF" opacity="0.7"></a-plane>
                     <!-- Texto centrado usando el componente 'text' -->
-                    <a-entity position="0 0 0.01" text="value: visita eddimia.com; width: 1.4; color: #FFFFFF; align: center;"></a-entity>
+                    <a-text value="visita eddimia.com" anchor="center" color="#FFFFFF" position="0 0 0.01" width="1.4"></a-text>
                 </a-entity>
            
 
@@ -35,12 +35,9 @@
 
 			</a-marker>
 
-            Cámara con raycaster y cursor para interactividad 
-            <a-entity camera look-controls
-                gesture-detector
-                cursor="fuse: false"
-                raycaster="objects: .clickable">
-            </a-entity>
+            
+            <!-- Cámara con raycaster y cursor para interactividad -->
+            <a-entity camera cursor="fuse: false" raycaster="objects: .clickable"></a-entity>
 
         </a-scene>
 
@@ -53,11 +50,6 @@
               var openLink = function () {
                 window.open('https://eddimia.com', '_blank');
               };
-              textEntity.addEventListener('click', openLink);
-              textEntity.addEventListener('mousedown', openLink);
-              textEntity.addEventListener('mouseup', openLink);
-              textEntity.addEventListener('touchstart', openLink);
-              textEntity.addEventListener('touchend', openLink);
             });
           </script>
 
