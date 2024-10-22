@@ -19,17 +19,17 @@
                     sound="src: url(https://leoginer.github.io/tarjeta-ar/music.mp3); autoplay: true; loop: true; volume: 1">
                 </a-entity>
             
-            <!-- Contenedor para el texto y el enlace -->
-           
-            <a-link href="https://eddim.com"
-                title="visita eddim.com"
-                position="0 2 0"
-                scale="0.3 0.3 0.3"
-                rotation="0 0 0"
-                color="#007BFF"
-                titleColor="#FFFFFF"
-                borderColor="#FFFFFF">
-            </a-link>
+                <!-- Contenedor para el texto y el enlace sin usar a-link -->
+                <a-entity id="link-text" position="0 2 0">
+                    <!-- Fondo del letrero -->
+                    <a-plane width="2" height="0.5" color="#007BFF" opacity="0.8"></a-plane>
+                    <!-- Texto del letrero -->
+                    <a-text value="visita eddim.com"
+                            anchor="center"
+                            color="#FFFFFF"
+                            position="0 0 0.01">
+                    </a-text>
+                </a-entity>
            
 
             <a-entity camera position="0 1 3" rotation="0 0 0"></a-entity>
@@ -37,7 +37,23 @@
 
 			</a-marker>
 
-        <a-entity camera></a-entity>
+        <a-entity camera>
+            <a-cursor id="cursor" rayOrigin="mouse"></a-cursor>
+        </a-entity>
         </a-scene>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var textEntity = document.querySelector('#link-text');
+              textEntity.addEventListener('click', function (evt) {
+                window.open('https://eddim.com', '_blank');
+              });
+              // Soporte para eventos táctiles
+              textEntity.addEventListener('touchstart', function (evt) {
+                window.open('https://eddim.com', '_blank');
+              });
+            });
+          </script>
+          
     </body>
 </html>
