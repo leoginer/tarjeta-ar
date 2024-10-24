@@ -24,7 +24,7 @@
                 <a-entity id="link-text" position="0 1.7 0">
                     <!-- Fondo del letrero 
                     <a-plane width="1.3" height="0.8" color="#0000FF" opacity="0.7"></a-plane> -->
-                    <a-plane id="text-plane" height="0.8" color="#0000FF" opacity="0.7"></a-plane>
+                    <a-plane id="text-plane" height="1" color="#0000FF" opacity="0.7"></a-plane>
                     <!-- Texto centrado usando el componente 'text' 
                     <a-text value="visita eddimia.com" color="#FFFFFF" position="0 0 0.01" width="1" height="2" scale="2.5 2.5 2.5"></a-text> -->
                     <a-text id="text-content" value="VISITA EDDIMIA.COM" color="#FFFFFF" position="0 0 0.01" align="center"></a-text>
@@ -39,42 +39,27 @@
             <!-- Cámara 
             <a-entity camera></a-entity> -->
 
+            <!-- Cámara con cursor y raycaster para detectar interacciones 
+            <a-entity camera look-controls cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .clickable"></a-entity> -->
+
             <!-- Cámara con cursor y raycaster para detectar interacciones -->
-            <a-entity camera look-controls cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .clickable"></a-entity>
+            <a-entity camera look-controls 
+                cursor="fuse: false; rayOrigin: mouse" 
+                 raycaster="objects: .clickable; showLine: true">
+            </a-entity>
 
         </a-scene>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-              // Obtenemos las dimensiones de la pantalla
-              var windowWidth = window.innerWidth;
-              var windowHeight = window.innerHeight;
-      
-              // Calculamos el ancho del plano basado en la relación de aspecto
-              var planeWidth = (windowWidth / windowHeight) * 1.5;
-              var planeHeight = planeWidth / 5; // Relación de aspecto del plano
-      
-              // Seleccionamos el plano y el texto
-              var plane = document.querySelector('#text-plane');
-              var text = document.querySelector('#text-content');
-      
-              // Ajustamos el ancho y alto del plano
-              plane.setAttribute('width', planeWidth);
-              plane.setAttribute('height', planeHeight);
-      
-              // Ajustamos el ancho del texto para que se ajuste al plano
-              text.setAttribute('width', planeWidth * 0.9); // El texto ocupará el 90% del ancho del plano
-      
-              // Aumentamos el tamaño del texto para que sea más grande y visible
-              text.setAttribute('scale', { x: 2, y: 2, z: 2 });
-      
-              // Hacemos que el texto sea un enlace
-              text.addEventListener('click', function () {
+              var textEntity = document.querySelector('#link-text');
+              // Añadimos eventos de clic y toque
+              var openLink = function () {
                 window.open('https://eddimia.com', '_blank');
-              });
-              text.addEventListener('touchstart', function () {
-                window.open('https://eddimia.com', '_blank');
-              });
+              };
+              textEntity.addEventListener('click', openLink);
+              textEntity.addEventListener('touchstart', openLink);
+              textEntity.addEventListener('mousedown', openLink);
             });
           </script>
     </body>
